@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Register - Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Main container */
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .toggle-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .toggle-link a {
+            text-decoration: none;
+            color: #4CAF50;
+        }
+
+        /* Hide and show login / register forms */
+        .form-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-container form {
+            display: none;
+        }
+
+        /* Display Login form by default */
+        .form-container .show-login {
+            display: block;
+        }
+
+        /* Display Register form when active */
+        .form-container .show-register {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Welcome to Tic-Tac-Toe</h2>
+
+    <!-- Form container (for login and registration) -->
+    <div class="form-container">
+
+        <!-- Login Form -->
+        <form id="loginForm" class="show-login" action="/login" method="post">
+            <h3>Login</h3>
+            <p style="color: red;" th:if="${error}" th:text="${error}"></p>
+
+            <label for="loginUsername">Username:</label>
+            <input type="text" id="loginUsername" name="username" required>
+
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Registration Form -->
+        <form id="registerForm" class="show-register" action="/register" method="post" style="display: none;">
+            <h3>Register</h3>
+            <label for="registerUsername">Username:</label>
+            <input type="text" id="registerUsername" name="username" required>
+
+            <label for="registerPassword">Password:</label>
+            <input type="password" id="registerPassword" name="password" required>
+
+            <button type="submit">Register</button>
+        </form>
+
+    </div>
+
+    <!-- Toggle Link -->
+    <div class="toggle-link">
+        <p id="toggleText">Don't have an account? <a href="javascript:void(0);" onclick="toggleForm()">Register</a></p>
+    </div>
+</div>
+
+<script>
+    let isLogin = true;
+
+    function toggleForm() {
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+        const toggleText = document.getElementById('toggleText');
+
+        if (isLogin) {
+            // Hide Login form and show Register form
+            loginForm.style.display = 'none';
+            registerForm.style.display = 'block';
+            toggleText.innerHTML = 'Already have an account? <a href="javascript:void(0);" onclick="toggleForm()">Login</a>';
+        } else {
+            // Hide Register form and show Login form
+            registerForm.style.display = 'none';
+            loginForm.style.display = 'block';
+            toggleText.innerHTML = 'Don\'t have an account? <a href="javascript:void(0);" onclick="toggleForm()">Register</a>';
+        }
+
+        // Toggle between forms
+        isLogin = !isLogin;
+    }
+</script>
+</body>
+</html>

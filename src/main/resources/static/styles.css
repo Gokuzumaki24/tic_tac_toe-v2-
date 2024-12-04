@@ -1,0 +1,135 @@
+/* Basic Reset */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+/* Game screen container */
+#game-screen {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Player information */
+#player-info {
+    margin-top: 40%;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#player-info p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#player-name-display {
+    font-weight: bold;
+}
+
+/* Game board */
+#game-board {
+    margin-bottom: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    justify-content: center;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    border: 2px solid #bbb;
+    transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+    background-color: #ccc;
+}
+
+/* Active player section */
+#active-player {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#active-player-name {
+    font-weight: bold;
+}
+
+/* Reset button */
+#reset-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#reset-button:hover {
+    background-color: #45a049;
+}
+
+/* Scoreboard */
+#scoreboard {
+    margin-top: 30px;
+    text-align: left;
+    width: 100%;
+}
+
+#scoreboard h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #aaa;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}

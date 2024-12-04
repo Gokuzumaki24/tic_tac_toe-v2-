@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+
+<div id="game-screen">
+    <!-- Player Info Section -->
+    <div id="player-info">
+        <p>Player Name: <span id="player-name-display">Player 1</span></p>
+        <p>Current Rank: <span id="current-rank">1</span></p>
+    </div>
+
+    <!-- Game Board Section -->
+    <div id="game-board" class="grid-container">
+        <div class="cell" data-cell-index="0"></div>
+        <div class="cell" data-cell-index="1"></div>
+        <div class="cell" data-cell-index="2"></div>
+        <div class="cell" data-cell-index="3"></div>
+        <div class="cell" data-cell-index="4"></div>
+        <div class="cell" data-cell-index="5"></div>
+        <div class="cell" data-cell-index="6"></div>
+        <div class="cell" data-cell-index="7"></div>
+        <div class="cell" data-cell-index="8"></div>
+    </div>
+
+    <!-- Active Player Section -->
+    <div id="active-player">
+        <p>Active Player: <span id="active-player-name">X</span></p>
+    </div>
+
+    <!-- Reset Button -->
+    <button id="reset-button">Reset</button>
+
+    <!-- Leaderboard Section -->
+    <section id="scoreboard">
+        <h3>Leaderboard</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Player</th>
+                <th>Score</th>
+            </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+            <tr>
+                <td>1</td>
+                <td>Player X</td>
+                <td id="score-x">0</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Player O</td>
+                <td id="score-o">0</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</div>
+
+<script src="../static/game.js"></script>
+
+</body>
+</html>
